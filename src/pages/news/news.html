@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Kriblet News
+    </ion-title>
+    <ion-icon class="searchIcon" name="search" (click)="toggleSearchBar()"></ion-icon>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background:#F2F2F2;">
+    <ion-searchbar
+      [@searchAnimation]="searchBarState"
+      [(ngModel)]="searchText"
+      [showCancelButton]="shouldShowCancel"
+      [placeholder]="searchPlaceHolder">
+  </ion-searchbar>
+
+
+  <div *ngFor="let article of articles | feedFilter:searchText" class="box">
+      
+    <div class="img">
+      <img src="{{article.image}}">
+    </div>
+
+    <div class="title">
+      {{article.title}}
+    </div>
+
+    <div class="description">
+      {{article.description}}
+    </div>
+
+    <ion-row class="likes">
+      <ion-col col-4>
+        <ion-icon name="thumbs-up"></ion-icon> 0 likes
+      </ion-col>
+      <ion-col col-4>
+        <a target="_blank" href="{{article.link}}"><ion-icon name="eye"></ion-icon> watch</a>
+      </ion-col>
+      <ion-col col-4 class="dateText">
+        {{article.date}}
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+  <div class="pullMessage">
+    Pull the screen down<br>
+    to load news
+    <br>
+    <ion-icon name="arrow-down"></ion-icon>
+  </div>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+</ion-content>

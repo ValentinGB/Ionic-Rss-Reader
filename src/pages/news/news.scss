@@ -1,0 +1,74 @@
+page-news {
+    background:#f2f2f2;
+
+    .searchIcon{
+        position: absolute;
+        right: 20px;
+        top: 14px;
+        font-size: 28px;
+    }
+
+    ion-header ion-navbar div,
+    ion-header ion-navbar button{
+        background:#34495e !important;
+        color:#FFF !important;
+    }
+
+    ion-content {
+        background:#f2f2f2;
+    }
+
+    .pullMessage{
+        font-size:16px;
+        color:#888;
+        text-align:center;
+        padding:10px;
+    }
+
+    .pullMessage ion-icon{
+        font-size:30px;
+    }
+
+    .box{
+        background:#fff;
+        box-shadow:0 5px 5px rgba(0,0,0,0.2);
+        padding:10px;
+        margin-bottom:10px;
+    }
+
+    .title{
+        font-weight:bold;
+        font-size:16px;
+    }
+
+    .description{
+        color:#888;
+    }
+
+    .img img {
+        width:100%;
+        max-height:200px;
+    }
+
+    a, a:active, a:hover{
+        text-decoration:none;
+        color:#888;
+        font-weight:bold;
+    }
+
+    a:visited{
+        color:#34495e ;
+    }
+
+    .likes {
+        font-size:16px;
+        font-weight:bold;
+        color:#888;
+    }
+
+    .dateText{
+        color:#888;
+        font-size:14px;
+        font-weight:bold;
+    }
+}
