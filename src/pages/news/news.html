@@ -37,15 +37,31 @@
     </div>
 
     <ion-row class="likes">
-      <ion-col col-4>
-        <ion-icon name="thumbs-up"></ion-icon> 0 likes
+
+      <ion-col  *ngIf="registered && !article.liked" (click)="likeArticle(article)" col-4>
+        <ion-icon name="thumbs-up"></ion-icon> {{article.likes}} likes
       </ion-col>
-      <ion-col col-4>
+
+      <ion-col style="color:#008DCB;" *ngIf="registered && article.liked" (click)="dislikeArticle(article)" col-4>
+        <ion-icon name="thumbs-up"></ion-icon> {{article.likes}} likes
+      </ion-col>
+      
+      <ion-col *ngIf="!registered" (click)="showAlertLike()"  col-4>
+          <ion-icon name="thumbs-up"></ion-icon> {{article.likes}} likes
+      </ion-col>
+
+      <ion-col *ngIf="registered" col-4>
         <a target="_blank" href="{{article.link}}"><ion-icon name="eye"></ion-icon> watch</a>
       </ion-col>
+
+      <ion-col *ngIf="!registered" (click)="showAlertLogin()" col-4>
+        <a><ion-icon name="eye"></ion-icon> watch</a>
+      </ion-col>
+
       <ion-col col-4 class="dateText">
         {{article.date}}
       </ion-col>
+
     </ion-row>
 
   </div>

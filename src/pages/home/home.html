@@ -6,20 +6,29 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <button ion-item>
+
+      <button ion-item menuToggle (click)="changePage(newsPage)">
         <ion-icon name="home" menuClose="left"></ion-icon>
         Home Page
       </button>
+
       <button *ngIf="registered" ion-item>
         <ion-icon name="thumbs-up"></ion-icon>
         Liked Articles
       </button>
-      <button *ngIf="!registered" ion-item>
-        <ion-icon name="log-in"></ion-icon>
-        Register
+
+      <button *ngIf="registered" menuToggle (click)="changePage(profilePage)" ion-item>
+        <ion-icon name="person"></ion-icon>
+        Profile
       </button>
+
+      <button *ngIf="!registered" (click)="signIn()" ion-item>
+        <ion-icon name="sign-in"></ion-icon>
+        Login with Facebook
+      </button>
+
     </ion-list>
   </ion-content>
 </ion-menu>
 
-<ion-nav id="nav" #content [root]="newsPage"></ion-nav>
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

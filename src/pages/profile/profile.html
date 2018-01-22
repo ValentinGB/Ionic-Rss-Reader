@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Profile</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding style="background:#F2F2F2;">
+
+    <ion-card>
+        <ion-list>
+          <ion-list-header>
+            User Data
+          </ion-list-header>
+    
+          <ion-item>
+            <ion-icon name="person" item-start></ion-icon>
+              Name: {{userData.name}}
+          </ion-item>
+    
+          <ion-item>
+            <ion-icon name="transgender" item-start></ion-icon>
+              Gender: {{userData.gender}}
+          </ion-item>
+    
+          <ion-item>
+            <ion-icon name="mail" item-start></ion-icon>
+              Mail: {{userData.mail}}
+          </ion-item>
+    
+        </ion-list>
+    </ion-card>
+
+</ion-content>
